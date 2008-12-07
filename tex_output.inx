@@ -1,0 +1,15 @@
+<inkscape-extension>
+  <_name>LaTeX Picture Output</_name>
+  <id>org.inkscape.output.tex</id>
+  <dependency type="executable" location="extensions">svg2tex.py</dependency>
+  <param name="include" type="string" _gui-text="File to import as the picture environment's background"></param>
+  <output>
+    <extension>.tex</extension>
+    <mimetype>text/x-tex</mimetype>
+    <_filetypename>LaTeX (text only) picture environment (*.tex)</_filetypename>
+    <_filetypetooltip>LaTeX picture environment (only text)</_filetypetooltip>
+  </output>
+  <script>
+    <command reldir="extensions" interpreter="python">svg2tex.py</command>
+  </script>
+</inkscape-extension>

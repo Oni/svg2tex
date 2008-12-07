@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="231.85715"
+   height="146.14285"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   version="1.0"
+   sodipodi:docname="comparison.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="233.08959"
+     inkscape:cy="118.73541"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1279"
+     inkscape:window-height="725"
+     inkscape:window-x="1"
+     inkscape:window-y="49" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-51.142857,-133.64787)">
+    <path
+       sodipodi:type="arc"
+       style="fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:4;stroke-miterlimit:7;stroke-dasharray:none;stroke-opacity:1"
+       id="path2391"
+       sodipodi:cx="275.71429"
+       sodipodi:cy="149.50504"
+       sodipodi:rx="30"
+       sodipodi:ry="31.428572"
+       d="M 305.71429,149.50504 A 30,31.428572 0 1 1 245.71429,149.50504 A 30,31.428572 0 1 1 305.71429,149.50504 z"
+       transform="matrix(0.5462378,0,0,0.5462378,61.504062,88.330821)" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:4;stroke-miterlimit:7;stroke-dasharray:none;stroke-opacity:1"
+       id="path2385"
+       sodipodi:cx="134.28572"
+       sodipodi:cy="172.36218"
+       sodipodi:rx="62.857143"
+       sodipodi:ry="77.14286"
+       d="M 197.14286,172.36218 A 62.857143,77.14286 0 1 1 71.428577,172.36218 A 62.857143,77.14286 0 1 1 197.14286,172.36218 z"
+       transform="matrix(0.5462378,0,0,0.5462378,31.504061,121.90225)" />
+    <text
+       xml:space="preserve"
+       style="font-size:21.84951401px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="165.7225"
+       y="161.42921"
+       id="text2387"><tspan
+         sodipodi:role="line"
+         id="tspan2389"
+         x="165.7225"
+         y="161.42921">This is some text</tspan></text>
+    <rect
+       style="fill:#000080;fill-opacity:1;stroke:#000000;stroke-width:2.18495131;stroke-miterlimit:7;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2393"
+       width="39.016991"
+       height="20.288834"
+       x="157.91911"
+       y="247.26659" />
+    <text
+       xml:space="preserve"
+       style="font-size:21.84951401px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="179.15587"
+       y="208.07915"
+       id="text3216"><tspan
+         sodipodi:role="line"
+         id="tspan3218"
+         x="179.15587"
+         y="208.07915">$This^{too}$</tspan></text>
+  </g>
+</svg>
