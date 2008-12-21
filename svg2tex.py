@@ -271,6 +271,7 @@ def GetAnchor(node):
   """
 
   alignment = ""
+  alignment_string = ""
 
   for child in AncestorsList(node):
     alignment_attribute = child.get("style")
