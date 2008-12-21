@@ -276,27 +276,22 @@ def GetAnchor(node):
     alignment_attribute = child.get("style")
 
     if alignment_attribute and alignment_attribute.strip():
-      regex = re.compile("\s*;?\s*text-align\s*:\s*([a-z]*)", re.IGNORECASE) # first we look for "text-align:"
+      regex = re.compile("\s*;?\s*text-anchor\s*:\s*([a-z]*)", re.IGNORECASE) # we look for "text-anchor:"
       m = regex.search(alignment_attribute)
       if m:
-        alignment_attribute = m.group(1)
-      else:
-        regex = re.compile("\s*;?\s*text-anchor\s*:\s*([a-z]*)", re.IGNORECASE) # then (if nothing was found)
-        m = regex.search(alignment_attribute)                                   # we look for "text-anchor:"
-        if m:
-          alignment_attribute = m.group(1)
+        alignment_string = m.group(1)
 
-      if alignment_attribute in ("center", "middle"):
-        alignment = "bc" # TTTT.TTTT  text is centered at x, y coordinates
-      if alignment_attribute == "end":
-        alignment = "br" # TTTTTTTT.  text is on the left of x, y coordinates
-      if alignment_attribute == "start":
-        alignment = "bl" # .TTTTTTTT  text is on the right of x, y coordinates
+      if alignment_string == "middle":
+        alignment = "c" # TTTT.TTTT  text is centered at x, y coordinates
+      if alignment_string == "end":
+        alignment = "r" # TTTTTTTT.  text is on the left of x, y coordinates
+      if alignment_string == "start":
+        alignment = "l" # .TTTTTTTT  text is on the right of x, y coordinates
 
-      if alignment:      # if we have found a valid alignment
+      if alignment: # if we have found a valid alignment
         return alignment # return it, otherwise keep looping among ancestors
 
-  alignment = "bl" # default value
+  alignment = "l" # default value
 
   return alignment
 
@@ -317,10 +312,19 @@ def FormatLatexPicture(svg_tree, raw_text, background):
   if background and background.strip(): # first, draw the background so the text will be over it
     picture_environment += "  \put(0,%s){\includegraphics[height=%smm, width=%smm]{%s}}\n" % (-svg_height, svg_height * conversion_constant, svg_width * conversion_constant, background)
 
-  for text in raw_text: # turnbox is taken from the "rotating" LaTeX package
-    text["text"] = "\makebox(0,0)[%s]{%s}" % (text["anchor"], text["text"])
+  for text in raw_text:
+    text["text"] = "\makebox(0,0)[%s]{\smash{%s}}" % (text["anchor"], text["text"])
+    # \smash{} needs some explanation here. What makebox does is quite simple: get text's bounding box
+    # and align it using the position (anchor) flags. This way you can align text using the bottom line, the
+    # top line and so on. The problem here is that if you align "Foo" and "Bag" using the baseline as a
+    # reference (as SVG does) you will see a wrong result in LaTeX because the "g" in "Bag" moves the
+    # baseline down. You will notice that only the "g" in "Bag" will be aligned with "Foo".
+    # So, the \smash command is used to "smash" the text's bounding box to 0x0 that has the advantage
+    # of being aligned with the REAL typographic baseline that is always the lower point of letters like
+    # "a" and "b" and not "g" or "q".
     if text["rotation"] != 0:
-      text["text"] = "\\turnbox{%s}{%s}" % (-text["rotation"], text["text"])
+      text["text"] = "\\turnbox{%s}{%s}" % (-text["rotation"], text["text"]) # turnbox is taken from the
+                                                                             # "rotating" LaTeX package
     picture_environment += "  \put(%s,%s){%s}\n" % (text["x"], -text["y"], text["text"])
 
   picture_environment += "\end{picture}"
