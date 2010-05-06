@@ -106,8 +106,11 @@ def ExtractText(node):
     this_text.update(ApplyTransform(this_text, transform_matrix)) # apply transformations
     direction.update(ApplyTransform(direction, transform_matrix))
 
-    if (direction["x"] - this_text["x"]) == 0:
-      rotation = 90 # vertical text has rotation = 90
+    if (direction["x"] - this_text["x"]) == 0: # vertical text has rotation = 90 or -90
+      if direction["y"] - this_text["y"] < 0:
+        rotation = -90
+      else:
+        rotation = 90
     else:
       rotation = (direction["y"] - this_text["y"]) / (direction["x"] - this_text["x"])
       rotation = math.degrees(math.atan(rotation))
